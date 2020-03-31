@@ -1,0 +1,16 @@
+{
+	"name": "hw_currency_convertor",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build": "webpack -w"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"vue": "^2.6.11",
+		"webpack": "^4.42.1",
+		"webpack-cli": "^3.3.11"
+	}
+}
