@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<script src="./js/bundle.js"></script>
+		<title>Currency Converter</title>
+	</head>
+	<body>
+		<div id="app">
+			<form v-on:submit.prevent="convertAmount">
+				<label for="currency_value">Amount to convert</label>
+				<input
+					type="number"
+					id="curency_value"
+					v-model="currencyValue"
+					required
+				/>
+				<p></p>
+				<label for="currency_select1">Convert From:</label>
+				<select id="currency_select1" v-model="rate1">
+					<option :value="1">EUR</option>
+					<option v-for="(rate, country) in rates" :value="rate" :key="country">
+						{{country}}
+					</option>
+				</select>
+				<label for="currency_select2">Convert To:</label>
+				<select id="currency_select2" v-model="rate2">
+					<option :value="1">EUR</option>
+					<option v-for="(rate, country) in rates" :value="rate" :key="country">
+						{{country}}
+					</option>
+				</select>
+				<button>Convert!</button>
+			</form>
+			<div id="converted_currency" v-if="convertedAmount != 0">
+				<p>Converted amount is {{ convertedAmount }}</p>
+			</div>
+		</div>
+	</body>
+</html>
